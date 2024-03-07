@@ -14,7 +14,7 @@ public class AddressDTO {
 
     private String doorNumber;
 
-    public AddressDTO() {}
+    public AddressDTO() {};
 
     public AddressDTO(Long zipCode, String city, String streetName, String streetNumber, String floorNumber, String doorNumber) {
         this.zipCode = zipCode;
@@ -29,47 +29,23 @@ public class AddressDTO {
         return zipCode;
     }
 
-    public void setZipCode(Long zipCode) {
-        this.zipCode = zipCode;
-    }
-
     public String getCity() {
         return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
     }
 
     public String getStreetName() {
         return streetName;
     }
 
-    public void setStreetName(String streetName) {
-        this.streetName = streetName;
-    }
-
     public String getStreetNumber() {
         return streetNumber;
-    }
-
-    public void setStreetNumber(String streetNumber) {
-        this.streetNumber = streetNumber;
     }
 
     public String getFloorNumber() {
         return floorNumber;
     }
 
-    public void setFloorNumber(String floorNumber) {
-        this.floorNumber = floorNumber;
-    }
-
     public String getDoorNumber() {
         return doorNumber;
-    }
-
-    public void setDoorNumber(String doorNumber) {
-        this.doorNumber = doorNumber;
     }
 }

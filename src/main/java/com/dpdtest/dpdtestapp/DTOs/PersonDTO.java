@@ -16,9 +16,9 @@ public class PersonDTO {
 
     private String mothersName;
 
-    private Long tajNumber;
+    private String tajNumber;
 
-    private Long taxId;
+    private String taxId;
 
     private String email;
 
@@ -28,7 +28,7 @@ public class PersonDTO {
 
     public PersonDTO() {}
 
-    public PersonDTO(String name, LocalDate dateOfBirth, String placeOfBirth, String mothersName, Long tajNumber, Long taxId, String email, List<AddressDTO> addresses, List<String> phoneNumbers) {
+    public PersonDTO(String name, LocalDate dateOfBirth, String placeOfBirth, String mothersName, String tajNumber, String taxId, String email, List<AddressDTO> addresses, List<String> phoneNumbers) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.placeOfBirth = placeOfBirth;
@@ -44,71 +44,35 @@ public class PersonDTO {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public LocalDate getDateOfBirth() {
         return dateOfBirth;
-    }
-
-    public void setDateOfBirth(LocalDate dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
     }
 
     public String getPlaceOfBirth() {
         return placeOfBirth;
     }
 
-    public void setPlaceOfBirth(String placeOfBirth) {
-        this.placeOfBirth = placeOfBirth;
-    }
-
     public String getMothersName() {
         return mothersName;
     }
 
-    public void setMothersName(String mothersName) {
-        this.mothersName = mothersName;
-    }
-
-    public Long getTajNumber() {
+    public String getTajNumber() {
         return tajNumber;
     }
 
-    public void setTajNumber(Long TAJnumber) {
-        this.tajNumber = TAJnumber;
-    }
-
-    public Long getTaxId() {
+    public String getTaxId() {
         return taxId;
-    }
-
-    public void setTaxId(Long taxId) {
-        this.taxId = taxId;
     }
 
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public List<AddressDTO> getAddresses() {
         return addresses;
     }
 
-    public void setAddresses(List<AddressDTO> addresses) {
-        this.addresses = addresses;
-    }
-
     public List<String> getPhoneNumbers() {
         return phoneNumbers;
-    }
-
-    public void setPhoneNumbers(List<String> phoneNumbers) {
-        this.phoneNumbers = phoneNumbers;
     }
 }

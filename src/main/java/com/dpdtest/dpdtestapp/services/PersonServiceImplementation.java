@@ -9,8 +9,6 @@ import org.springframework.stereotype.Service;
 import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -77,6 +75,7 @@ public class PersonServiceImplementation implements PersonService {
             personRepository.deleteById(id);
             return new PersonDTO();
         } else {
+            System.out.println("We are here");
             person.setName("");
             person.setDateOfBirth(null);
             person.setPlaceOfBirth("");

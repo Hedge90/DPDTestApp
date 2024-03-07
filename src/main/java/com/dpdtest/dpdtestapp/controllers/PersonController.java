@@ -63,7 +63,7 @@ public class PersonController {
         if (GPDROnlyAsBoolean) {
             return new ResponseEntity<>(personDTO, HttpStatus.OK);
         } else {
-            return new ResponseEntity<>("The data of person id " + id.toString() + " has been deleted", HttpStatus.OK);
+            return new ResponseEntity<>("The data of person id " + id + " has been deleted", HttpStatus.OK);
         }
     }
 }

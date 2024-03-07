@@ -20,9 +20,9 @@ public class Person {
 
     private String mothersName;
 
-    private Long tajNumber;
+    private String tajNumber;
 
-    private Long taxId;
+    private String taxId;
 
     private String email;
 
@@ -34,7 +34,7 @@ public class Person {
 
     public Person() {}
 
-    public Person(String name, LocalDate dateOfBirth, String placeOfBirth, String mothersName, Long tajNumber, Long taxId, String email) {
+    public Person(String name, LocalDate dateOfBirth, String placeOfBirth, String mothersName, String tajNumber, String taxId, String email) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.placeOfBirth = placeOfBirth;
@@ -83,19 +83,19 @@ public class Person {
         this.mothersName = mothersName;
     }
 
-    public Long getTajNumber() {
+    public String getTajNumber() {
         return tajNumber;
     }
 
-    public void setTajNumber(Long tajNumber) {
+    public void setTajNumber(String tajNumber) {
         this.tajNumber = tajNumber;
     }
 
-    public Long getTaxId() {
+    public String getTaxId() {
         return taxId;
     }
 
-    public void setTaxId(Long taxId) {
+    public void setTaxId(String taxId) {
         this.taxId = taxId;
     }
 
