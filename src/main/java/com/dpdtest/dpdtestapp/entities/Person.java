@@ -116,6 +116,10 @@ public class Person {
         addresses.add(address);
     }
 
+    public void removeAddresses() {
+        addresses.clear();
+    }
+
     public List<PhoneNumber> getPhoneNumbers() {
         return phoneNumbers;
     }
@@ -123,5 +127,9 @@ public class Person {
     public void addPhoneNumber(PhoneNumber phoneNumber) {
         phoneNumber.setPerson(this);
         phoneNumbers.add(phoneNumber);
+    }
+
+    public void removePhoneNumbers() {
+        phoneNumbers.clear();
     }
 }
