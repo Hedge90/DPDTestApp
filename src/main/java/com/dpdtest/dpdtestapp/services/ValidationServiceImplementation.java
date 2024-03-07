@@ -30,11 +30,17 @@ public class ValidationServiceImplementation implements ValidationService {
         if (!isValidEmail((personDTO.getEmail()))) {
             throw new IllegalArgumentException("Invalid email format");
         }
-        if (personDTO.getTajNumber() != null && !isValidTajNumber(personDTO.getTajNumber().toString())) {
+        if (personDTO.getTajNumber() != null && !isValidTajNumber(personDTO.getTajNumber())) {
             throw new IllegalArgumentException("Invalid Taj Number format");
         }
-        if (personDTO.getTaxId() != null && !isValidTaxId(personDTO.getTaxId().toString())) {
+        if (personDTO.getTaxId() != null && !isValidTaxId(personDTO.getTaxId())) {
             throw new IllegalArgumentException("Invalid Tax Id format");
+        }
+        if (personDTO.getAddresses() == null) {
+            throw new IllegalArgumentException("Address list cannot be null. Pass an empty array instead.");
+        }
+        if (personDTO.getPhoneNumbers() == null) {
+            throw new IllegalArgumentException("Phonenumber list list cannot be null. Pass an empty array instead.");
         }
         for (String phoneNumber : personDTO.getPhoneNumbers()) {
             if (phoneNumber != null && !isValidPhoneNumber(phoneNumber)) {

@@ -34,6 +34,18 @@ databaseChangeLog:
                   name: email
                   type: VARCHAR(255)
   - changeSet:
+      id: modify_person_table
+      author: Author
+      changes:
+        - modifyDataType:
+            tableName: person
+            columnName: taj_number
+            newDataType: VARCHAR(255)
+        - modifyDataType:
+            tableName: person
+            columnName: tax_id
+            newDataType: VARCHAR(255)
+  - changeSet:
       id: create_address_table
       author: Author
       changes:
