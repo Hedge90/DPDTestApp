@@ -9,6 +9,9 @@ import org.springframework.stereotype.Service;
 import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 
@@ -19,14 +22,18 @@ public class PersonServiceImplementation implements PersonService {
 
     private final MapperService mapperService;
 
+    private final ValidationService validationService;
+
     @Autowired
-    public PersonServiceImplementation(PersonRepository personRepository, MapperService mapperService) {
+    public PersonServiceImplementation(PersonRepository personRepository, MapperService mapperService, ValidationService validationService) {
         this.personRepository = personRepository;
         this.mapperService = mapperService;
+        this.validationService = validationService;
     }
 
     @Override
     public PersonDTO saveNewPerson(PersonDTO personDTO) {
+        validationService.validatePersonDTO(personDTO);
         Person person = mapperService.convertPersonDTOToPerson(personDTO);
         personRepository.save(person);
         return personDTO;
@@ -39,6 +46,7 @@ public class PersonServiceImplementation implements PersonService {
 
     @Override
     public PersonDTO updatePerson(PersonDTO personDTO, Long id) {
+        validationService.validatePersonDTO(personDTO);
         Person person = personRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Person not found with id: " + id));
         Person updatedPerson = mapperService.convertPersonDTOToPerson(personDTO);

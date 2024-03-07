@@ -28,4 +28,9 @@ public class GlobalExceptionHandler extends ExceptionHandlerExceptionResolver {
     public ResponseEntity<ErrorDTO> handleInvalidParameterException(InvalidParameterException exception) {
         return new ResponseEntity<>(new ErrorDTO("error", exception.getMessage()), HttpStatus.BAD_REQUEST);
     }
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<ErrorDTO> handleIllegalArgumentException(IllegalArgumentException exception) {
+        return new ResponseEntity<>(new ErrorDTO("error", exception.getMessage()), HttpStatus.BAD_REQUEST);
+    }
 }

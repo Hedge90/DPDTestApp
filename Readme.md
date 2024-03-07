@@ -1,6 +1,8 @@
 NOTES:
 The instructions requested that it should be possible to remove only the personally identifying data (under GDPR) for a person. Since all data listed in the instructions classify as such, at present the method used for this purpose clears all data for the given person, leaving only an empty row with an id. The method can be easily customized to clear or keep any given field.
 
+As to input data validation, the code only checks for invalid values (e.g. email addresses in wrong format), but accepts empty and null values. This can be further customised to suit business needs.
+
 INFO FOR FRONTEND:
 
 GET /api/persons?index={index}length={length}
