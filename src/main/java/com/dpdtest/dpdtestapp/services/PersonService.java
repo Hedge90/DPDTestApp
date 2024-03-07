@@ -6,4 +6,6 @@ public interface PersonService {
 
     public PersonDTO saveNewPerson(PersonDTO personDTO);
 
+    public PersonDTO findPersonById(Long id);
+
 }

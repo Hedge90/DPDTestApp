@@ -24,7 +24,21 @@ public class PersonDTO {
 
     private List<AddressDTO> addresses = new ArrayList<>();
 
+    private List<String> phoneNumbers = new ArrayList<>();
+
     public PersonDTO() {}
+
+    public PersonDTO(String name, LocalDate dateOfBirth, String placeOfBirth, String mothersName, Long tajNumber, Long taxId, String email, List<AddressDTO> addresses, List<String> phoneNumbers) {
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+        this.placeOfBirth = placeOfBirth;
+        this.mothersName = mothersName;
+        this.tajNumber = tajNumber;
+        this.taxId = taxId;
+        this.email = email;
+        this.addresses = addresses;
+        this.phoneNumbers = phoneNumbers;
+    }
 
     public String getName() {
         return name;
@@ -88,5 +102,13 @@ public class PersonDTO {
 
     public void setAddresses(List<AddressDTO> addresses) {
         this.addresses = addresses;
+    }
+
+    public List<String> getPhoneNumbers() {
+        return phoneNumbers;
+    }
+
+    public void setPhoneNumbers(List<String> phoneNumbers) {
+        this.phoneNumbers = phoneNumbers;
     }
 }

@@ -70,3 +70,25 @@ databaseChangeLog:
                   constraints:
                     foreignKeyName: fk_person_id
                     references: person(id)
+  - changeSet:
+      id: create_phonenumber_table
+      author: Author
+      changes:
+        - createTable:
+            tableName: phone_number
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: phone_number
+                  type: VARCHAR(20)
+              - column:
+                  name: person_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: fk_person_id
+                    references: person(id)
