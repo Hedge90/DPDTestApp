@@ -14,7 +14,8 @@ public class ValidationServiceImplementation implements ValidationService {
 
     private static final Pattern pattern = Pattern.compile(EMAIL_PATTERN);
 
-    public ValidationServiceImplementation() {}
+    public ValidationServiceImplementation() {
+    }
 
     public void validatePositiveLong(String valueToCheck) {
         try {
@@ -40,7 +41,7 @@ public class ValidationServiceImplementation implements ValidationService {
             throw new IllegalArgumentException("Address list cannot be null. Pass an empty array instead.");
         }
         if (personDTO.getPhoneNumbers() == null) {
-            throw new IllegalArgumentException("Phonenumber list list cannot be null. Pass an empty array instead.");
+            throw new IllegalArgumentException("Phonenumber list cannot be null. Pass an empty array instead.");
         }
         for (String phoneNumber : personDTO.getPhoneNumbers()) {
             if (phoneNumber != null && !isValidPhoneNumber(phoneNumber)) {
@@ -93,13 +94,11 @@ public class ValidationServiceImplementation implements ValidationService {
         }
 
         for (char c : phoneNumber.toCharArray()) {
-            if (!Character.isDigit(c) && c != '-' && c != '+') {
+            if (!Character.isDigit(c) && c != '-' && c != '+' && c != '/') {
                 return false;
             }
         }
 
         return true;
     }
-
-
 }

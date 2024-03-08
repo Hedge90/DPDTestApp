@@ -1,7 +1,5 @@
 package com.dpdtest.dpdtestapp.DTOs;
 
-import com.dpdtest.dpdtestapp.entities.Address;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;

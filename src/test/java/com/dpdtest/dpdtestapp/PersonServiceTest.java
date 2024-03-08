@@ -270,6 +270,6 @@ public class PersonServiceTest {
         PersonDTO result = personService.deleteDataOfPerson(id, true);
 
         assertEquals("", result.getName());
-        assertEquals(null, result.getDateOfBirth());
+        assertNull(result.getDateOfBirth());
     }
 }

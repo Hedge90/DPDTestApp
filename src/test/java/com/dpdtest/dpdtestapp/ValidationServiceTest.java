@@ -1,14 +1,12 @@
 package com.dpdtest.dpdtestapp;
 
 import com.dpdtest.dpdtestapp.DTOs.PersonDTO;
-import com.dpdtest.dpdtestapp.services.PersonServiceImplementation;
 import com.dpdtest.dpdtestapp.services.ValidationService;
 import com.dpdtest.dpdtestapp.services.ValidationServiceImplementation;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import javax.persistence.EntityNotFoundException;
 import java.security.InvalidParameterException;
 import java.time.LocalDate;
 import java.util.ArrayList;

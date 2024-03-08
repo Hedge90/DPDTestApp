@@ -35,8 +35,8 @@ As to input data validation, the code only checks for invalid values (e.g., emai
         "floorNumber": "5",
         "doorNumber": "3"
     }],
-    "phoneNumbers": ["1237129837129"]
-}
+    "phoneNumbers": ["123456789"]
+  }
 
 - **PUT /api/persons?id={id}**:  Expects JSON in the same format as POST /api/persons, and updates the data of the person with the given ID to the data sent in the request. Keep in mind that all fields of the given person will be overwritten, so this expects the full set of data in the JSON.
 
