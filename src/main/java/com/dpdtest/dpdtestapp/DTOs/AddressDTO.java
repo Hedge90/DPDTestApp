@@ -16,7 +16,12 @@ public class AddressDTO {
 
     public AddressDTO() {};
 
-    public AddressDTO(Long zipCode, String city, String streetName, String streetNumber, String floorNumber, String doorNumber) {
+    public AddressDTO(Long zipCode,
+                      String city,
+                      String streetName,
+                      String streetNumber,
+                      String floorNumber,
+                      String doorNumber) {
         this.zipCode = zipCode;
         this.city = city;
         this.streetName = streetName;

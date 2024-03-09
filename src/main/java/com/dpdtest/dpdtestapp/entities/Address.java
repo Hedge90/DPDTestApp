@@ -24,9 +24,15 @@ public class Address {
     @ManyToOne
     private Person person;
 
-    public Address() {}
+    public Address() {
+    }
 
-    public Address(Long zipCode, String city, String streetName, String streetNumber, String floorNumber, String doorNumber) {
+    public Address(Long zipCode,
+                   String city,
+                   String streetName,
+                   String streetNumber,
+                   String floorNumber,
+                   String doorNumber) {
         this.zipCode = zipCode;
         this.city = city;
         this.streetName = streetName;

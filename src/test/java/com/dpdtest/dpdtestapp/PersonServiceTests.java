@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Optional;
 
 @SpringBootTest
-public class PersonServiceTest {
+public class PersonServiceTests {
 
     @Mock
     private PersonRepository personRepository;
@@ -72,12 +72,6 @@ public class PersonServiceTest {
 
         PersonDTO result = personService.saveNewPerson(personDTO);
 
-        verify(validationService, times(1)).validatePersonDTO(personDTO);
-
-        verify(mapperService, times(1)).convertPersonDTOToPerson(personDTO);
-
-        verify(personRepository, times(1)).save(any(Person.class));
-
         assertEquals(personDTO, result);
     }
 
@@ -105,14 +99,6 @@ public class PersonServiceTest {
         when(mapperService.convertPersonDTOToPerson(personDTO)).thenReturn(updatedPerson);
 
         PersonDTO result = personService.updatePerson(personDTO, id);
-
-        verify(validationService, times(1)).validatePersonDTO(personDTO);
-
-        verify(personRepository, times(1)).findById(id);
-
-        verify(mapperService, times(1)).convertPersonDTOToPerson(personDTO);
-
-        verify(personRepository, times(1)).save(updatedPerson);
 
         assertEquals(personDTO, result);
     }

@@ -13,7 +13,8 @@ import java.util.List;
 @Service
 public class MapperServiceImplementation implements MapperService {
 
-    public MapperServiceImplementation() {}
+    public MapperServiceImplementation() {
+    }
 
     @Override
     public AddressDTO convertAddressToAddressDTO(Address address) {
@@ -88,5 +89,4 @@ public class MapperServiceImplementation implements MapperService {
         }
         return convertedPhoneNumberList;
     }
-
 }

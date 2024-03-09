@@ -32,9 +32,16 @@ public class Person {
     @OneToMany(mappedBy = "person", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<PhoneNumber> phoneNumbers = new ArrayList<>();
 
-    public Person() {}
+    public Person() {
+    }
 
-    public Person(String name, LocalDate dateOfBirth, String placeOfBirth, String mothersName, String tajNumber, String taxId, String email) {
+    public Person(String name,
+                  LocalDate dateOfBirth,
+                  String placeOfBirth,
+                  String mothersName,
+                  String tajNumber,
+                  String taxId,
+                  String email) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.placeOfBirth = placeOfBirth;
@@ -43,6 +50,7 @@ public class Person {
         this.taxId = taxId;
         this.email = email;
     }
+
     public void setId(Long id) {
         this.id = id;
     }

@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest
-public class ValidationServiceTest {
+public class ValidationServiceTests {
 
     private ValidationService validationService;
 
@@ -65,7 +65,6 @@ public class ValidationServiceTest {
         );
 
         assertThrows(IllegalArgumentException.class, () -> validationService.validatePersonDTO(personDTO));
-
     }
 
     @Test
@@ -83,7 +82,6 @@ public class ValidationServiceTest {
         );
 
         assertThrows(IllegalArgumentException.class, () -> validationService.validatePersonDTO(personDTO));
-
     }
 
     @Test
@@ -96,12 +94,27 @@ public class ValidationServiceTest {
                 "1234567890",
                 "0123456789",
                 "johnsmithtestmail.com",
-                null,
+                new ArrayList<>(),
                 new ArrayList<>()
         );
 
         assertThrows(IllegalArgumentException.class, () -> validationService.validatePersonDTO(personDTO));
-
     }
 
+    @Test
+    public void validatePersonDTO_WithIllegalTaxId_ThrowsIllegalArgumentException() {
+        PersonDTO personDTO = new PersonDTO(
+                "John Smith",
+                LocalDate.of(1985, 10, 12),
+                "Washington",
+                "Jane Smith",
+                "12345678901",
+                "123456789",
+                "johnsmithtestmail.com",
+                new ArrayList<>(),
+                new ArrayList<>()
+        );
+
+        assertThrows(IllegalArgumentException.class, () -> validationService.validatePersonDTO(personDTO));
+    }
 }

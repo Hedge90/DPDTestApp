@@ -23,7 +23,9 @@ public class PersonServiceImplementation implements PersonService {
     private final ValidationService validationService;
 
     @Autowired
-    public PersonServiceImplementation(PersonRepository personRepository, MapperService mapperService, ValidationService validationService) {
+    public PersonServiceImplementation(PersonRepository personRepository,
+                                       MapperService mapperService,
+                                       ValidationService validationService) {
         this.personRepository = personRepository;
         this.mapperService = mapperService;
         this.validationService = validationService;

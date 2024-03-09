@@ -14,7 +14,8 @@ public class PhoneNumber {
     @ManyToOne
     private Person person;
 
-    public PhoneNumber() {}
+    public PhoneNumber() {
+    }
 
     public PhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;

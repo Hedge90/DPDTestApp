@@ -20,7 +20,6 @@ public class GlobalExceptionHandler extends ExceptionHandlerExceptionResolver {
 
     @ExceptionHandler(value = HttpMessageNotReadableException.class)
     public ResponseEntity<ErrorDTO> handleHttpMessageNotReadable(HttpMessageNotReadableException exception) {
-
         return new ResponseEntity<>(new ErrorDTO("error", "Invalid JSON format or payload structure"), HttpStatus.BAD_REQUEST);
     }
 

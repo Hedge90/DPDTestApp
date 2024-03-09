@@ -24,9 +24,18 @@ public class PersonDTO {
 
     private List<String> phoneNumbers = new ArrayList<>();
 
-    public PersonDTO() {}
+    public PersonDTO() {
+    }
 
-    public PersonDTO(String name, LocalDate dateOfBirth, String placeOfBirth, String mothersName, String tajNumber, String taxId, String email, List<AddressDTO> addresses, List<String> phoneNumbers) {
+    public PersonDTO(String name,
+                     LocalDate dateOfBirth,
+                     String placeOfBirth,
+                     String mothersName,
+                     String tajNumber,
+                     String taxId,
+                     String email,
+                     List<AddressDTO> addresses,
+                     List<String> phoneNumbers) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.placeOfBirth = placeOfBirth;
